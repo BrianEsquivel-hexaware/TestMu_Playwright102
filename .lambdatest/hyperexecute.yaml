@@ -1,5 +1,5 @@
 version: "0.1"
-runson: linux
+runson: win,linux
 runtime:
   - language: node
     version: "20"
@@ -9,17 +9,20 @@ env:
   LT_USERNAME: "${{.secrets.LT_USERNAME}}"
   LT_ACCESS_KEY: "${{.secrets.LT_ACCESS_KEY}}"
   FORM_PASSWORD: "${{.secrets.FORM_PASSWORD}}"
+  RUN_CLOUD_TARGETS: "true"
 
 cacheKey: '{{ checksum "package-lock.json" }}'
 cacheDirectories:
   - node_modules
 
 concurrency: 2
-matrix:
-  project: [win-chrome, linux-firefox]
+autosplit: true
 
-testSuites:
-  - npm run test:cloud -- --project=${matrix.project}
+testDiscovery:
+  type: automatic
+  mode: remote
+
+testRunnerCommand: npx playwright test "$test"
 
 pre:
   - npm ci

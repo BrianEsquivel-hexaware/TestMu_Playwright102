@@ -3,6 +3,10 @@ import { defineConfig } from "@playwright/test";
 
 dotenv.config();
 
+const cloudProjects = process.platform === "win32"
+  ? [{ name: "win-chrome" }, { name: "win-firefox" }]
+  : [{ name: "linux-chrome" }, { name: "linux-firefox" }];
+
 export default defineConfig({
   testDir: "./tests",
   timeout: 60_000,
@@ -20,8 +24,6 @@ export default defineConfig({
     trace: "retain-on-failure",
   },
   projects: [
-    { name: "local" },
-    { name: "win-chrome" },
-    { name: "linux-firefox" },
+    ...(process.env.RUN_CLOUD_TARGETS === "true" ? cloudProjects : [{ name: "local" }]),
   ],
 });

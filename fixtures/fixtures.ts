@@ -3,6 +3,8 @@ import { chromium } from "playwright";
 
 const targets = {
   "win-chrome": { browserName: "Chrome", platform: "Windows 10" },
+  "win-firefox": { browserName: "pw-firefox", platform: "Windows 10" },
+  "linux-chrome": { browserName: "Chrome", platform: "Linux" },
   "linux-firefox": { browserName: "pw-firefox", platform: "Linux" },
 } as const;
 
