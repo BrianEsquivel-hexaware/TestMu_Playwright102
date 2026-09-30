@@ -15,11 +15,18 @@ function isCloudTarget(name: string): name is CloudTarget {
 }
 
 export const test = base.extend({
-  page: async ({ page }, use, testInfo) => {
+  page: async ({}, use, testInfo) => {
     const targetName = testInfo.project.name;
 
     if (!isCloudTarget(targetName)) {
-      await use(page);
+      const localBrowser = await chromium.launch();
+      try {
+        await use(await localBrowser.newPage({
+          baseURL: process.env.PLAYGROUND_BASE_URL ?? "https://www.testmuai.com/selenium-playground/",
+        }));
+      } finally {
+        await localBrowser.close();
+      }
       return;
     }
 
@@ -51,7 +58,10 @@ export const test = base.extend({
     let cloudPage: Page | undefined;
 
     try {
-      cloudPage = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+      cloudPage = await browser.newPage({
+        baseURL: process.env.PLAYGROUND_BASE_URL ?? "https://www.testmuai.com/selenium-playground/",
+        viewport: { width: 1280, height: 900 },
+      });
       await use(cloudPage);
 
       const screenshot = await cloudPage.screenshot().catch(() => undefined);

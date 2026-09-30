@@ -1,0 +1,173 @@
+{
+    "id": "ef5a374e-dcc5-400a-b31f-1fbb1323d7c7",
+    "remark": "Job failed as encountered a Test level failure",
+    "created_at": "2026-09-30T23:24:46Z",
+    "update_at": "2026-09-30T23:28:29Z",
+    "global_timeout": 90,
+    "tunnel_name": "",
+    "start_time": "2026-09-30T23:25:09Z",
+    "end_time": "2026-09-30T23:28:29Z",
+    "summary": {
+        "total_time": 200000000000,
+        "execution_time": 200000000000,
+        "total_tasks": 3,
+        "build_time_consumed": 314000000000,
+        "jobTestExecutionTime": "17s",
+        "failed_tasks": 2,
+        "total_stage_info": {
+            "prerun": {
+                "StageFailedPercent": 0,
+                "StagePassPercent": 100,
+                "TotalStage": 3
+            },
+            "scenario": {
+                "StageFailedPercent": 100,
+                "StagePassPercent": 0,
+                "TotalStage": 3
+            },
+            "test_discovery": {
+                "StageFailedPercent": 0,
+                "StagePassPercent": 100,
+                "TotalStage": 1
+            }
+        },
+        "status": "failed",
+        "job_link": "https://hyperexecute.lambdatest.com/hyperexecute/task?jobId=ef5a374e-dcc5-400a-b31f-1fbb1323d7c7"
+    },
+    "tasks": [
+        {
+            "id": "HYPW-3343755-1790810707829632586HNT",
+            "os": "win",
+            "status": "completed",
+            "remark": "completed",
+            "debug": false,
+            "created_at": "2026-09-30T23:25:07Z",
+            "update_at": "2026-09-30T23:25:22Z",
+            "start_time": "2026-09-30T23:25:09Z",
+            "end_time": "2026-09-30T23:25:22Z",
+            "group_number": 1,
+            "stages": [
+                {
+                    "id": "a73bc30e-af9e-4809-9cd6-0141a6ba81f2",
+                    "type": "prerun",
+                    "status": "completed",
+                    "name": "pre",
+                    "iteration": 0,
+                    "link": "pre.log",
+                    "created_at": "2026-09-30T23:25:18Z",
+                    "started_at": "2026-09-30T23:25:18Z",
+                    "updated_at": "2026-09-30T23:25:21Z",
+                    "order": 3,
+                    "task_number": 1
+                },
+                {
+                    "id": "5945500c-2098-4e9f-a634-7793a9b5331e",
+                    "type": "test_discovery",
+                    "status": "completed",
+                    "name": "discovery",
+                    "iteration": 0,
+                    "link": "discovery.log",
+                    "created_at": "2026-09-30T23:25:22Z",
+                    "started_at": "2026-09-30T23:25:21Z",
+                    "updated_at": "2026-09-30T23:25:22Z",
+                    "order": 4,
+                    "task_number": 1
+                }
+            ]
+        },
+        {
+            "id": "HYPW-3343755-1790810722291119419GDI",
+            "os": "win",
+            "status": "failed",
+            "remark": "Job failed as encountered a Test level failure",
+            "debug": false,
+            "created_at": "2026-09-30T23:25:22Z",
+            "update_at": "2026-09-30T23:27:21Z",
+            "start_time": "2026-09-30T23:25:24Z",
+            "end_time": "2026-09-30T23:27:21Z",
+            "group_number": 2,
+            "stages": [
+                {
+                    "id": "b8f01825-a0a7-4c6e-ac9e-c30f380dd32a",
+                    "type": "prerun",
+                    "status": "completed",
+                    "name": "pre",
+                    "iteration": 0,
+                    "link": "pre.log",
+                    "created_at": "2026-09-30T23:25:33Z",
+                    "started_at": "2026-09-30T23:25:32Z",
+                    "updated_at": "2026-09-30T23:25:36Z",
+                    "order": 3,
+                    "task_number": 2
+                },
+                {
+                    "id": "af737c22-a36c-4b0a-9bee-62aa5dec7a98",
+                    "type": "scenario",
+                    "status": "failed",
+                    "name": "tests/drag-drop-sliders.spec.ts",
+                    "iteration": 0,
+                    "link": "command.1.0.log",
+                    "created_at": "2026-09-30T23:25:36Z",
+                    "started_at": "2026-09-30T23:25:44Z",
+                    "updated_at": "2026-09-30T23:26:47Z",
+                    "order": 5,
+                    "task_number": 2
+                }
+            ]
+        },
+        {
+            "id": "HYPW-3343755-1790810722295412452SAW",
+            "os": "win",
+            "status": "failed",
+            "remark": "Job failed as encountered a Test level failure",
+            "debug": false,
+            "created_at": "2026-09-30T23:25:22Z",
+            "update_at": "2026-09-30T23:28:29Z",
+            "start_time": "2026-09-30T23:25:25Z",
+            "end_time": "2026-09-30T23:28:29Z",
+            "group_number": 3,
+            "stages": [
+                {
+                    "id": "36bdf70f-f44c-4081-a6d6-aa3a7f7320d1",
+                    "type": "prerun",
+                    "status": "completed",
+                    "name": "pre",
+                    "iteration": 0,
+                    "link": "pre.log",
+                    "created_at": "2026-09-30T23:25:35Z",
+                    "started_at": "2026-09-30T23:25:34Z",
+                    "updated_at": "2026-09-30T23:25:38Z",
+                    "order": 3,
+                    "task_number": 3
+                },
+                {
+                    "id": "e204b322-8a9c-4e48-a539-1eb7d91d0199",
+                    "type": "scenario",
+                    "status": "failed",
+                    "name": "tests/input-form-submit.spec.ts",
+                    "iteration": 0,
+                    "link": "command.1.0.log",
+                    "created_at": "2026-09-30T23:25:38Z",
+                    "started_at": "2026-09-30T23:25:46Z",
+                    "updated_at": "2026-09-30T23:26:50Z",
+                    "order": 5,
+                    "task_number": 3
+                },
+                {
+                    "id": "454f708d-b3c6-47c7-9bd3-5a90f34d8c13",
+                    "type": "scenario",
+                    "status": "failed",
+                    "name": "tests/simple-form-demo.spec.ts",
+                    "iteration": 0,
+                    "link": "command.2.0.log",
+                    "created_at": "2026-09-30T23:25:38Z",
+                    "started_at": "2026-09-30T23:26:53Z",
+                    "updated_at": "2026-09-30T23:27:56Z",
+                    "order": 6,
+                    "task_number": 3
+                }
+            ]
+        }
+    ],
+    "test_ids": null
+}

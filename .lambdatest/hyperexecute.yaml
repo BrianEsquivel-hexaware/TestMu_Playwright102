@@ -1,5 +1,9 @@
 version: "0.1"
-runson: win,linux
+project:
+  name: "BrianEsquivel-hexaware/TestMu_Playwright102"
+  id: "01M3T65WHGHAEK9MPZC2XK5GHM"
+
+runson: win
 runtime:
   - language: node
     version: "20"
@@ -19,8 +23,9 @@ concurrency: 2
 autosplit: true
 
 testDiscovery:
-  type: automatic
+  type: raw
   mode: remote
+  command: node discover-specs.cjs
 
 testRunnerCommand: npx playwright test "$test"
 

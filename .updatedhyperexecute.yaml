@@ -1,6 +1,7 @@
 accessibilityJob: false
 alwaysRunPostSteps: false
 appium: null
+autosplit: true
 betaFeature:
     setPartiallyCompletedAsCompleted: false
 cacheDirectories:
@@ -22,6 +23,7 @@ env:
     LT_ACCESS_KEY: ${{.secrets.LT_ACCESS_KEY}}
     LT_USERNAME: ${{.secrets.LT_USERNAME}}
     PLAYGROUND_BASE_URL: https://www.testmuai.com/selenium-playground/
+    RUN_CLOUD_TARGETS: "true"
 errorCategorizedOnFailureOnly: false
 framework:
     additional_args: null
@@ -111,14 +113,10 @@ globalPre:
     type: ""
     workingDirectory: ""
     yamlPath: null
-jobID: cb58063a-d020-4054-abea-c2d11868f14f
+jobID: ef5a374e-dcc5-400a-b31f-1fbb1323d7c7
 key: '********'
 localHTTPProxy: ""
 ltOptions: {}
-matrix:
-    project:
-        - win-chrome
-        - linux-firefox
 maxRetriesPreSteps: 0
 mergeArtifacts: true
 meta: {}
@@ -147,8 +145,8 @@ preDirectives:
     shell: ""
     workingDirectory: ""
 project:
-    id: 01M3SZA20S2GPZ25FV3WKZ8WZ2
-    name: LambdaTest Default Project
+    id: 01M3T65WHGHAEK9MPZC2XK5GHM
+    name: BrianEsquivel-hexaware/TestMu_Playwright102
     type: custom
 projectpath: ""
 regionConfig:
@@ -159,7 +157,7 @@ regionConfig:
         region: ""
     vm: []
 report: true
-runson: linux
+runson: win10
 runtime:
     addons: []
     language: node
@@ -170,9 +168,13 @@ sourcePayload:
     verifySSL: true
 sprofilePath: ""
 storageType: ""
+testDiscovery:
+    command: node discover-specs.cjs
+    mode: remote
+    type: raw
 testDiscoveryResultV3: []
-testSuites:
-    - npm run test:cloud -- --project=${matrix.project}
+testRunnerCommand: npx playwright test "$test"
+testSuites: []
 testType: playwright
 triggerMode: false
 triggerSource: CLI
