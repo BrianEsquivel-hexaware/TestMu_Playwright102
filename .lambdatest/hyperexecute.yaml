@@ -26,9 +26,9 @@ pre:
 
 report: true
 partialReports:
-  frameworkName: playwright
-  location: playwright-report
-  type: HTML
+  - frameworkName: playwright
+    location: playwright-report
+    type: html
 
 uploadArtefacts:
   - name: Playwright-Execution
