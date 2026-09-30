@@ -4,6 +4,16 @@ runtime:
   - language: node
     version: "20"
 
+env:
+  PLAYGROUND_BASE_URL: "https://www.testmuai.com/selenium-playground/"
+  LT_USERNAME: "${{.secrets.LT_USERNAME}}"
+  LT_ACCESS_KEY: "${{.secrets.LT_ACCESS_KEY}}"
+  FORM_PASSWORD: "${{.secrets.FORM_PASSWORD}}"
+
+cacheKey: '{{ checksum "package-lock.json" }}'
+cacheDirectories:
+  - node_modules
+
 concurrency: 2
 matrix:
   project: [win-chrome, linux-firefox]
@@ -13,3 +23,16 @@ testSuites:
 
 pre:
   - npm ci
+
+report: true
+partialReports:
+  frameworkName: playwright
+  location: playwright-report
+  type: HTML
+
+uploadArtefacts:
+  - name: Playwright-Execution
+    path:
+      - playwright-report/**
+      - test-results/**
+mergeArtifacts: true

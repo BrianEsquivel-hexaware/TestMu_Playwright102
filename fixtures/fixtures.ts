@@ -52,9 +52,10 @@ export const test = base.extend({
       cloudPage = await browser.newPage({ viewport: { width: 1280, height: 900 } });
       await use(cloudPage);
 
-      if (testInfo.status !== "passed") {
-        await testInfo.attach("failure-screenshot", {
-          body: await cloudPage.screenshot(),
+      const screenshot = await cloudPage.screenshot().catch(() => undefined);
+      if (screenshot) {
+        await testInfo.attach("session-screenshot", {
+          body: screenshot,
           contentType: "image/png",
         });
       }

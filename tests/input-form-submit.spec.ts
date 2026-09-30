@@ -14,9 +14,14 @@ test("Input Form Submit validates required fields and submits successfully", asy
   );
   expect(validationMessage).toMatch(/^Please fill (?:in|out) this field\.$/i);
 
+  const formPassword = process.env.FORM_PASSWORD;
+  if (!formPassword) {
+    throw new Error("FORM_PASSWORD must be set in the environment or HyperExecute secrets.");
+  }
+
   await nameField.fill("Brian Esquivel");
   await page.getByPlaceholder("Email", { exact: true }).fill("brian.test@example.com");
-  await page.getByPlaceholder("Password", { exact: true }).fill("Playwright102!");
+  await page.getByPlaceholder("Password", { exact: true }).fill(formPassword);
   await page.getByPlaceholder("Company", { exact: true }).fill("TestMu Certification");
   await page.getByPlaceholder("Website", { exact: true }).fill("https://example.com");
   await page.getByRole("combobox").selectOption({ label: "United States" });

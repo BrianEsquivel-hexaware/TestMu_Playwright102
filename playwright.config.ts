@@ -1,4 +1,7 @@
+import dotenv from "dotenv";
 import { defineConfig } from "@playwright/test";
+
+dotenv.config();
 
 export default defineConfig({
   testDir: "./tests",
@@ -13,7 +16,7 @@ export default defineConfig({
     baseURL: process.env.PLAYGROUND_BASE_URL ?? "https://www.testmuai.com/selenium-playground/",
     actionTimeout: 10_000,
     navigationTimeout: 30_000,
-    screenshot: "only-on-failure",
+    screenshot: "on",
     trace: "retain-on-failure",
   },
   projects: [
