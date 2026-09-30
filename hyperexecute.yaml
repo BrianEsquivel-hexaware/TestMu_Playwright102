@@ -1,0 +1,15 @@
+version: "0.1"
+runson: linux
+runtime:
+  - language: node
+    version: "20"
+
+concurrency: 2
+matrix:
+  project: [win-chrome, linux-firefox]
+
+testSuites:
+  - npm run test:cloud -- --project=${matrix.project}
+
+pre:
+  - npm ci
