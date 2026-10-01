@@ -4,6 +4,9 @@ project:
   id: "01M3T65WHGHAEK9MPZC2XK5GHM"
 
 runson: win
+hostsOverride:
+  - host: cdp.lambdatest.com
+    ip: 3.7.33.75
 runtime:
   - language: node
     version: "20"
@@ -19,7 +22,7 @@ cacheKey: '{{ checksum "package-lock.json" }}'
 cacheDirectories:
   - node_modules
 
-concurrency: 2
+concurrency: 1
 autosplit: true
 
 testDiscovery:

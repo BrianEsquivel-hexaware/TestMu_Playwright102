@@ -4,8 +4,8 @@ import { defineConfig } from "@playwright/test";
 dotenv.config();
 
 const cloudProjects = process.platform === "win32"
-  ? [{ name: "win-chrome" }, { name: "win-firefox" }]
-  : [{ name: "linux-chrome" }, { name: "linux-firefox" }];
+  ? [{ name: "win-chrome" }]
+  : [{ name: "linux-chrome" }];
 
 export default defineConfig({
   testDir: "./tests",

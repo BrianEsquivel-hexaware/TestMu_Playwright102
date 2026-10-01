@@ -11,7 +11,7 @@ captureScreenRecordingForScenarios: false
 codeDirectory: TestMu_Certification
 collectLocalGitData: true
 combineTasksInMatrixMode: false
-concurrency: 2
+concurrency: 1
 cypress: false
 differentialUpload:
     enabled: false
@@ -113,7 +113,10 @@ globalPre:
     type: ""
     workingDirectory: ""
     yamlPath: null
-jobID: ef5a374e-dcc5-400a-b31f-1fbb1323d7c7
+hostsOverride:
+    - host: cdp.lambdatest.com
+      ip: 3.7.33.75
+jobID: 8919b2f8-8e69-4673-bbe1-c17cb989db10
 key: '********'
 localHTTPProxy: ""
 ltOptions: {}
@@ -157,7 +160,7 @@ regionConfig:
         region: ""
     vm: []
 report: true
-runson: win10
+runson: linux
 runtime:
     addons: []
     language: node
