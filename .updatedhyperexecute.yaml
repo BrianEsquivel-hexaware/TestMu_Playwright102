@@ -116,7 +116,7 @@ globalPre:
 hostsOverride:
     - host: cdp.lambdatest.com
       ip: 3.7.33.75
-jobID: 8919b2f8-8e69-4673-bbe1-c17cb989db10
+jobID: 29cc23e8-0bdd-42e9-8dae-eb7d5fbe7207
 key: '********'
 localHTTPProxy: ""
 ltOptions: {}
@@ -160,7 +160,7 @@ regionConfig:
         region: ""
     vm: []
 report: true
-runson: linux
+runson: win
 runtime:
     addons: []
     language: node

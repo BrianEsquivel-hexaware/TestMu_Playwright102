@@ -3,9 +3,7 @@ import { defineConfig } from "@playwright/test";
 
 dotenv.config();
 
-const cloudProjects = process.platform === "win32"
-  ? [{ name: "win-chrome" }]
-  : [{ name: "linux-chrome" }];
+const cloudProjects = [{ name: "win-chrome" }, { name: "linux-chrome" }];
 
 export default defineConfig({
   testDir: "./tests",
@@ -14,7 +12,7 @@ export default defineConfig({
     timeout: 8_000,
   },
   fullyParallel: true,
-  workers: 3,
+  workers: process.env.RUN_CLOUD_TARGETS === "true" ? 1 : 3,
   reporter: [["list"], ["html", { outputFolder: "playwright-report", open: "never" }]],
   use: {
     baseURL: process.env.PLAYGROUND_BASE_URL ?? "https://www.testmuai.com/selenium-playground/",
